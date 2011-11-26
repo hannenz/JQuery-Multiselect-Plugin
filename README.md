@@ -6,7 +6,7 @@ Inspired by [this plugin](http://quasipartikel.at/multiselect) I have written an
 
 Just embed [jquery](http://www.jquery.org), this plugin and the CSS stylesheet and apply to the SELECTs you want to enhance. Of course you are encouraged to adjust the stylesheet to suit your needs.
 
-### Optionen
+### Options
 
 ~~~javascript
 $('select.multi').multiselect({
