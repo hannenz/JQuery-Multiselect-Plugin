@@ -1,8 +1,30 @@
+// jquery.multiselect-1.0.js
+//
+// Copyright 2011 Johannes Braun <me@hannenz.de>
+//
+// This program is free software; you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation; either version 2 of the License, or
+// (at your option) any later version.
+//
+// This program is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+//
+// You should have received a copy of the GNU General Public License
+// along with this program; if not, write to the Free Software
+// Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+// MA 02110-1301, USA.
+//
+// jQuery plugin to turn multiselects into more usable things
+//
+
 ;(function($){
 	jQuery.fn.multiselect = function(arg){
 		var options = $.extend({}, $.fn.multiselect.defaults, arg);
 		var uid = 0;
-		
+
 		return this.each(function(){
 			var select = $(this);
 
@@ -38,7 +60,7 @@
 				$('<a class="multiselect-unselect-all-link" href="#">' + options.unselect_all + '</a>').insertAfter(sel_ul).click(udata, unselect_all);
 			}
 
-			
+
 			select.hide();
 			container.insertAfter(select);
 
@@ -130,7 +152,7 @@
 		var flag = false;
 		$(list).children('li').each(function(){
 			//~ console.log('testing against ' + $(this).text());
-			
+
 			if ($(this).text().localeCompare(text) >= 0){
 				$(this).before(el);
 				flag = true;
@@ -168,7 +190,7 @@
 		} while ((flag == true) && (--n > 0));
 		return;
 
-		
+
 		var new_list = $('<ul></ul>');
 		list.children('li').each(function(){
 			insert_sorted(new_list, $(this));
@@ -186,4 +208,4 @@
 		sorted : true
 	};
 })(jQuery);
-	
+
